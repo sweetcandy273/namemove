@@ -94,7 +94,7 @@ document.addEventListener('init', function(event) {
     document.querySelector('#myNavigator').pushPage('action.html');
   }
   function gocomedy() {
-    document.querySelector('#myNavigator').pushPage('action.html');
+    document.querySelector('#myNavigator').pushPage('comedy.html');
   }
 
 // `<h3>${doc.data().title}</h3>`
