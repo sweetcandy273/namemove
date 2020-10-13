@@ -93,6 +93,9 @@ document.addEventListener('init', function(event) {
   function goaction() {
     document.querySelector('#myNavigator').pushPage('action.html');
   }
+  function gocomedy() {
+    document.querySelector('#myNavigator').pushPage('action.html');
+  }
 
 // `<h3>${doc.data().title}</h3>`
  
