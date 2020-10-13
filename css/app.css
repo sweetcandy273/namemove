@@ -189,7 +189,7 @@
   }
 
   .page__background {
-    background-color: black;
+    background-color: #2D2D2D;
   }
 
   .toolbar:not(.toolbar--transparent) {
@@ -207,7 +207,7 @@
   /* menu */
 
         .menu_header {
-          background-color: black;
+          background-color: #1D1D1D;
           border-bottom: 1px solid rgba(147, 145, 145, 0.76);
           color: white;
           height: 25px;
