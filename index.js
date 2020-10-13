@@ -99,7 +99,9 @@ document.addEventListener('init', function(event) {
   function gohorror() {
     document.querySelector('#myNavigator').pushPage('horror.html');
   }
-
+  function romance() {
+    document.querySelector('#myNavigator').pushPage('romance.html');
+  }
 // `<h3>${doc.data().title}</h3>`
  
 
