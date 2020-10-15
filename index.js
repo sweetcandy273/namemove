@@ -1,22 +1,22 @@
 
 $(function(){
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyDd0Q94GXPFZAT6nuZp3az_49EpF4FkcxA",
-        authDomain: "namemove.firebaseapp.com",
-        databaseURL: "https://namemove.firebaseio.com",
-        projectId: "namemove",
-        storageBucket: "namemove.appspot.com",
-        messagingSenderId: "609490634873",
-        appId: "1:609490634873:web:08bcdcb56d230c2b6a2ca8",
-        measurementId: "G-ZP7LRG3WWE"
-      };
+  var firebaseConfig = {
+    apiKey: "AIzaSyDOCAbC123dEf456GhI789jKl01-MnO",
+    authDomain: "myapp-project-123.firebaseapp.com",
+    databaseURL: "https://myapp-project-123.firebaseio.com",
+    projectId: "myapp-project-123",
+    storageBucket: "myapp-project-123.appspot.com",
+    messagingSenderId: "65211879809",
+    appId: "1:65211879909:web:3ae38ef1cdcb2e01fe5f0c",
+    measurementId: "G-8GSGZQ44ST"
+  };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var db = firebase.firestore();
     
-      db.collection("movies").get().then((querySnapshot) => {
+        db.collection("movies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="card">
             <img class="card-img-top" src="${doc.data().posterURL}" alt="">
