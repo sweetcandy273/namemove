@@ -21,7 +21,7 @@ $(function () {
 
       const result = 
       `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-        <img src="img/pic1.jpg">
+        <img src="${doc.data().posterURL}">
       </ons-carousel-item>`
       $("#list-movie").append(result)
     });
@@ -42,9 +42,14 @@ $(function () {
 
 })
 
+
 document.addEventListener('init', function (event) {
   var page = event.target;
-
+   if (page.id === 'movie_details') {
+    page.querySelector('#movie_title').innerHTML = page.data.title;
+    page.querySelector('#movie_year').innerHTML = page.data.year;
+    page.querySelector('#movie_movie_synopsis').innerHTML = page.data.shortstory;
+  }
 
 });
 
