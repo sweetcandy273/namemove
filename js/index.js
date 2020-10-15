@@ -19,25 +19,11 @@ $(function () {
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
 
-      // var row = `
-      // <ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-      //   <img src="${doc.data().posterURL}" >
-      // </ons-carousel-item>
-
-      // `
-
-      // var row = `<div class="card">
-      //       <img class="card-img-top" src="${doc.data().posterURL}" alt="">
-      //       <div class="card-body">
-      //       <h4 class="card-title">
-      //           ${doc.data().title}(${doc.data().year})
-      //       </h4>
-      //       <p class="card-text">  ${doc.data().shortstory}       </p>
-      //    </div>
-
-      //       `
-
-      // $("#list").append(row);
+      const result = 
+      `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>`
+      $("#list-movie").append(result)
     });
   });
   // firebase.auth().onAuthStateChanged(function(user) {
@@ -58,30 +44,24 @@ $(function () {
 
 document.addEventListener('init', function (event) {
   var page = event.target;
-  console.log(page.id);
 
 
 });
-
-
-
-
-
-
 
 function openMovieDetails(id) {
   document.querySelector('#myNavigator').pushPage('views/movie_details.html', { data: { title: id } });
 }
 
-// function openHome() {
-//   document.querySelector('#myNavigator').pushPage('views/home_splitter.html');
-// }
+function goBack() {
+  document.querySelector('#menu').close().then(function () {
+    document.querySelector('#myNavigator').popPage()
+  });
+}
 
-// function goBack() {
-//   document.querySelector('#menu').close().then(function () {
-//     document.querySelector('#myNavigator').popPage()
-//   });
-// }
+function openHome() {
+  document.querySelector('#myNavigator').pushPage('views/home_splitter.html');
+}
+
 // function goaction() {
 //   document.querySelector('#myNavigator').pushPage('views/action_splitter.html');
 // }
