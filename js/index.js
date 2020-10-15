@@ -18,7 +18,15 @@ $(function(){
     
         db.collection("movies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<div class="card">
+         
+          // var row = `
+          // <ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+          //   <img src="${doc.data().posterURL}" >
+          // </ons-carousel-item>
+      
+          // `
+        
+              var row = `<div class="card">
             <img class="card-img-top" src="${doc.data().posterURL}" alt="">
             <div class="card-body">
             <h4 class="card-title">
@@ -79,11 +87,11 @@ document.addEventListener('init', function(event) {
 
 
   function openMovieDetails(id) {
-    document.querySelector('#myNavigator').pushPage('movie_details.html', {data: {title: id}});
+    document.querySelector('#myNavigator').pushPage('views/movie_details.html', {data: {title: id}});
   }
   
   function openHome() {
-    document.querySelector('#myNavigator').pushPage('home_splitter.html');
+    document.querySelector('#myNavigator').pushPage('views/home_splitter.html');
   }
   function goBack() {
     document.querySelector('#menu').close().then(function() {
@@ -91,16 +99,16 @@ document.addEventListener('init', function(event) {
     });
   }
   function goaction() {
-    document.querySelector('#myNavigator').pushPage('action.html');
+    document.querySelector('#myNavigator').pushPage('views/action.html');
   }
   function gocomedy() {
-    document.querySelector('#myNavigator').pushPage('comedy.html');
+    document.querySelector('#myNavigator').pushPage('views/comedy.html');
   }
   function gohorror() {
-    document.querySelector('#myNavigator').pushPage('horror.html');
+    document.querySelector('#myNavigator').pushPage('views/horror.html');
   }
   function romance() {
-    document.querySelector('#myNavigator').pushPage('romance.html');
+    document.querySelector('#myNavigator').pushPage('views/romance.html');
   }
 // `<h3>${doc.data().title}</h3>`
  
