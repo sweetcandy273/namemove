@@ -9,14 +9,20 @@ $(function () {
     });
   
     $("#signingoogle").click(function () {
+      console.log(`signingoogle`);
+      
       var provider = new firebase.auth.GoogleAuthProvider();
   
       provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
       firebase.auth().signInWithRedirect(provider);
       firebase.auth().getRedirectResult().then(function(result) {
+        console.log(`result`,result);
+        
           if (result.credential) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
+            console.log(`token=${tokenB}`);
+            
             // ...
           }
           // The signed-in user info.
@@ -25,7 +31,7 @@ $(function () {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
-          console.log(errorCode);
+          console.log(`errorCode`,errorCode);
           $("#error").text(errorMessage);
         });
    
