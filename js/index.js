@@ -58,10 +58,6 @@ function goBack() {
   });
 }
 
-function openHome() {
-  document.querySelector('#myNavigator').pushPage('views/home_splitter.html');
-}
-
 // function goaction() {
 //   document.querySelector('#myNavigator').pushPage('views/action_splitter.html');
 // }

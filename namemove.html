@@ -21,7 +21,6 @@
 
 
 <body>
-
     <ons-splitter>
         <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
             <ons-page>
@@ -38,13 +37,20 @@
                 </ons-list>
             </ons-page>
         </ons-splitter-side>
-        <ons-splitter-content id="content" page="views/home.html"></ons-splitter-content>
+        <ons-splitter-content id="content">
+            <ons-tabbar swipeable position="auto">
+                <ons-tab page="views/home.html" label="Home" icon="md-home" active>
+                </ons-tab>
+                <ons-tab page="views/search.html" label="Search" icon="md-search">
+                </ons-tab>
+                <ons-tab page="views/favorite.html" label="Favorite" icon="md-favorite">
+                </ons-tab>
+                <ons-tab page="views/account_settings.html" label="Account" icon="md-settings">
+                </ons-tab>
+            </ons-tabbar>
+        </ons-splitter-content>
     </ons-splitter>
 
-    <ons-tabbar swipeable position="auto">
-        <ons-tab page="views/home.html" label="Home" icon="ion-home, material:md-home" badge="7" active>
-        </ons-tab>
-    </ons-tabbar>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
