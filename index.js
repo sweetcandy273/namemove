@@ -66,17 +66,7 @@ $(function () {
         $("#list").append(row);
       });
     });
-  // firebase.auth().onAuthStateChanged(function(user) {
-  //     if (user) {
-  //       // User is signed in.
-  //      var email = user.email;
-  //      console.log(`User with email ${email} signed in`);
-  //       window.location.href = "index.html"
-  //     } else {
-  //       // User is signed out.
-  //       window.location.href = "signin.html"
-  //     }
-  //   });
+  
 });
 
 document.addEventListener("init", function (event) {
@@ -144,8 +134,6 @@ function gosignin() {
       // An error happened.
       console.log(`error`, error);
     });
-
-  
 }
 
 // `<h3>${doc.data().title}</h3>`
