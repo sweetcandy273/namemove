@@ -14,18 +14,31 @@ firebase.analytics();
 var db = firebase.firestore();
 $(function () {
 
-
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-
-      const result =
-        `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-        <img src="${doc.data().posterURL}">
-      </ons-carousel-item>`
-      $("#list-movie-today").append(result)
-     
+      if (doc.data().title == "Alita: Battle Ange") {
+        const result1 =
+          `
+          <img src="${doc.data().wellpaperURL}">
+        `
+        $("#wallpaper1").append(result1)
+      } else if (doc.data().title == "Secret Life of Pets 2") {
+        const result1 =
+          `
+          <img src="${doc.data().wellpaperURL}">
+        `
+        $("#wallpaper2").append(result1)
+      } else if (doc.data().title == "The Invisible Man") {
+        const result1 =
+          `
+          <img src="${doc.data().wellpaperURL}">
+        `
+        $("#wallpaper3").append(result1)
+      }
     });
   });
+
+
 
 
 
@@ -41,14 +54,22 @@ $(function () {
     });
   });
 
-    db.collection("movies").get().then((querySnapshot) => {
+
+  db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.data().year == 2019) {
-        const result =
-          `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+
+      const result =
+        `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
           <img src="${doc.data().posterURL}">
         </ons-carousel-item>`
-        $("#list-movie-2019").append(result)
+      if (doc.data().type == "comedy") {
+        $("#list-movie-comedy").append(result)
+      } else if (doc.data().type == "romantic") {
+        $("#list-movie-romance").append(result)
+      } else if (doc.data().type == "horror") {
+        $("#list-movie-horror").append(result)
+      } else if (doc.data().type == "action") {
+        $("#list-movie-action").append(result)
       }
     });
   });
@@ -67,16 +88,22 @@ function openMovieDetails(id) {
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().title == id) {
-        const  show_pic =
+        const wallpaper =
           `
-     
+          <ons-icon icon="fa-play-circle"></ons-icon>
+          <img src="${doc.data().wellpaperURL}">
+        
+          `
+        $(".trailer").append(wallpaper)
+
+
+        const show_pic =
+          `
           <img src="${doc.data().posterURL}"alt="" width="60%">
-   
-          
-          
+       
         `
         $("#show_pic").append(show_pic)
-        
+
         $("#movie_title").append(doc.data().title)
         $("#movie_year").append(doc.data().year)
         $(".movie_synopsis").append(doc.data().shortstory)
@@ -121,16 +148,30 @@ function openMovieDetails(id) {
         }
         $("#movie_time").append(doc.data().runtime)
 
+        db.collection("movies").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const result5 =
+              `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" >
+                <img src="${doc.data().posterURL}">
+              </ons-carousel-item>`
+      
+              $("#list-movie-similar").append(result5)
+            
+          });
+        });
+
       }
+
+
     });
   });
   document.querySelector('#myNavigator').pushPage('views/movie_details.html');
 }
 
 function goBack() {
-  document.querySelector('#menu').close().then(function () {
-    document.querySelector('#myNavigator').popPage()
-  });
+
+  document.querySelector('#myNavigator').popPage()
+
 }
 
 // function goaction() {
