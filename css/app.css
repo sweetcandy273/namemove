@@ -7,7 +7,7 @@
 }
 
 .tabbar {
-    background-color: rgb(255, 255, 255);
+    background-color: black;
 }
 
 #carousel {
@@ -68,7 +68,7 @@
   
         .movie_list {
           margin: 10px;
-          height: 250px;
+          height: 240px;
           padding-top: 20px;
          
         }
@@ -201,7 +201,7 @@
   .toolbar:not(.toolbar--transparent) {
     background-color: black;
   }
-
+  
   .toolbar-button {
     color: white;
   }
@@ -220,3 +220,7 @@
           font-size: 10px;
           padding: 0 0 0 16px!important;
         }
+        :checked+.tabbar__button {
+          color: red;
+          
+      }
