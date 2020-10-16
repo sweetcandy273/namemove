@@ -21,45 +21,25 @@
 
 
 <body>
-    <ons-splitter>
-        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-            <ons-page>
-                <ons-list style="background-color: transparent;">
-                    <ons-list-item onclick="fn.load('views/home.html')" tappable>
-                        Home
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('views/action.html')" tappable>
-                        Action
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('views/comedy.html')" tappable>
-                        Comedy
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('views/horror.html')" tappable>
-                        Horror
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('views/Romance.html')" tappable>
-                        Romance
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('about.html')" tappable>
-                        About
-                    </ons-list-item>
-                </ons-list>
-            </ons-page>
-        </ons-splitter-side>
-        <ons-splitter-content id="content" page="views/home.html">
-            <!-- <ons-tabbar swipeable position="auto">
-                <ons-tab page="views/home.html" label="Home" icon="md-home" active>
-                </ons-tab>
-                <ons-tab page="views/search.html" label="Search" icon="md-search">
-                </ons-tab>
-                <ons-tab page="views/favorite.html" label="Favorite" icon="md-favorite">
-                </ons-tab>
-                <ons-tab page="views/account_settings.html" label="Account" icon="md-settings">
-                </ons-tab>
-            </ons-tabbar> -->
-        </ons-splitter-content>
-    </ons-splitter>
+    <ons-page>
+        <ons-toolbar>
+           
+            <div class="center" style="color: red">NAME MOVE</div>
+            
+        </ons-toolbar>
 
+
+        <ons-tabbar swipeable position="auto">
+            <ons-tab page="views/home.html" label="Home" icon="md-home" active>
+            </ons-tab>
+            <ons-tab page="views/search.html" label="Search" icon="md-search">
+            </ons-tab>
+            <ons-tab page="views/favorite.html" label="Favorite" icon="md-favorite">
+            </ons-tab>
+            <ons-tab page="views/account_settings.html" label="Account" icon="md-settings">
+            </ons-tab>
+        </ons-tabbar>
+    </ons-page>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

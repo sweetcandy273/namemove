@@ -2,27 +2,8 @@
   <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
   <template id="home.html">
     <ons-page id="home">
-      <ons-toolbar>
-        <div class="left">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center" style="color: red">NAME MOVE</div>
-        <div class="right">
-          <ons-toolbar-button>
-            <ons-icon icon="fa-search"></ons-icon>
-          </ons-toolbar-button>
-          <ons-if platform="android">
-            <ons-toolbar-button>
-              <ons-icon icon="ion-android-more-vertical"></ons-icon>
-            </ons-toolbar-button>
-          </ons-if>
-        </div>
-      </ons-toolbar>
     
-
-
+    
       <ons-carousel class="carousel" swipeable auto-scroll id="carousel" style="height: auto;">
         <ons-carousel-item>
           <img src="img/star.jpg" />
@@ -51,30 +32,43 @@
 
       <div class="movie_list">
         HIT TO DAY
-        <ons-carousel auto-refresh swipeable overscrollable item-width="110px" id="list-movie-hit" >
+        <ons-carousel auto-refresh swipeable overscrollable item-width="170px" id="list-movie-hit" >
 
 
         </ons-carousel>
       </div>
-      <br>
-      <br>
+      
       <div class="movie_list">
-        TO DAY MOVIE
-        <ons-carousel auto-refresh swipeable overscrollable item-width="110px" id="list-movie-today">
+        COMEDY
+        <ons-carousel auto-refresh swipeable overscrollable item-width="170px" id="list-movie-comedy">
 
 
         </ons-carousel>
       </div>
-      <br>
-      <br>
+   
       <div class="movie_list">
-        MOVIE 2019
-        <ons-carousel auto-refresh swipeable overscrollable item-width="110px" id="list-movie-2019">
+        ACTION
+        <ons-carousel auto-refresh swipeable overscrollable item-width="170px" id="list-movie-action">
 
 
         </ons-carousel>
       </div>
 
+      <div class="movie_list">
+        HORROR
+        <ons-carousel auto-refresh swipeable overscrollable item-width="170px" id="list-movie-horror">
+
+
+        </ons-carousel>
+      </div>
+
+      <div class="movie_list">
+        ROMANCE
+        <ons-carousel auto-refresh swipeable overscrollable item-width="170px" id="list-movie-romance">
+
+
+        </ons-carousel>
+      </div>
     </ons-page>
   </template>
 </ons-page>

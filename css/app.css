@@ -68,14 +68,15 @@
   
         .movie_list {
           margin: 10px;
-          height: 130px;
-          padding-top: 30px;
+          height: 250px;
+          padding-top: 20px;
          
         }
   
         .movie_list img {
-          margin-top: 10px;
+          margin-top: 5px;
           width: 90%
+         
         }
   
 /* profile */
