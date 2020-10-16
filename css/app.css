@@ -70,11 +70,14 @@
           margin: 10px;
           height: 130px;
           padding-top: 30px;
+         
         }
   
         .movie_list img {
+          margin-top: 10px;
           width: 90%
         }
+  
 /* profile */
 
 .user_cover {

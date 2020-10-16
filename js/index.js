@@ -22,22 +22,39 @@ $(function () {
         `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
         <img src="${doc.data().posterURL}">
       </ons-carousel-item>`
-      $("#list-movie").append(result)
+      $("#list-movie-today").append(result)
+     
     });
   });
 
+
+
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (doc.data().type == "comedy") {
+      if (doc.data().rating > 7) {
+        const result1 =
+          `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+          <img src="${doc.data().posterURL}">
+        </ons-carousel-item>`
+        $("#list-movie-hit").append(result1)
+      }
+    });
+  });
+
+    db.collection("movies").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().year == 2019) {
         const result =
           `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
           <img src="${doc.data().posterURL}">
         </ons-carousel-item>`
-        $("#list-movie-comedy").append(result)
+        $("#list-movie-2019").append(result)
       }
     });
   });
+
 })
+
 
 
 document.addEventListener('init', function (event) {
