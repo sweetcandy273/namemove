@@ -1,11 +1,13 @@
 <!--  The Movie Detail Page -->
 <ons-page id="movie_details">
+ 
   <ons-toolbar class="trailer_toolbar" modifier="transparent" inline>
     <div class="left">
       <ons-if platform="android">
         <ons-back-button>Back</ons-back-button>
       </ons-if>
     </div>
+    
     <div class="right">
       <ons-if platform="android">
         <ons-toolbar-button>
@@ -14,13 +16,11 @@
         <ons-toolbar-button>
           <ons-icon icon="md-share"></ons-icon>
         </ons-toolbar-button>
-        <ons-toolbar-button>
-          <ons-icon icon="fa-search"></ons-icon>
-        </ons-toolbar-button>
+        
       </ons-if>
       <ons-if platform="ios">
         <ons-toolbar-button onclick="goBack()">
-          <ons-icon style="opacity: 0.7; color: black" icon="ion-ios-close"></ons-icon>
+          <ons-back-button>Back</ons-back-button>
         </ons-toolbar-button>
       </ons-if>
     </div>

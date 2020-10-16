@@ -1,5 +1,5 @@
 .toolbar {
-    background-color: crimson;
+    background-color: black;
     color: white;
     text-align: center;
     font-size: 27px;
@@ -112,6 +112,7 @@
         .trailer {
           height: 190px;
           position: relative;
+          margin-top: 45px;
         }
   
         .trailer img {
@@ -223,4 +224,17 @@
         :checked+.tabbar__button {
           color: red;
           
-      }
+      }.back-button--material__icon {
+        
+        fill: red;
+       
+    }
+    .back-button {
+ 
+      color: red;
+  }
+  .back-button__icon {
+
+    fill: red;
+
+}
