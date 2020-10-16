@@ -16,12 +16,32 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
-  <body>
+
+  <body style="background-color: black">
+    <header>
+      <h2 style="color: black">ย่อลงมา</h2>
+    </header>
+
+    <div align="center">
+      <img src="img/โลโก้.png" style="width: 200px; height: 200px" />
+    </div>
+
     <div class="container">
-      <div class="display-2">Sign In</div>
+      <h1 style="text-align: center; color: aliceblue">NameMove</h1>
+      <br />
+      <br />
+      <br />
+
+      <p style="text-align: center; color: aliceblue">Welcome to join us :</p>
+
       <div class="form-group">
-        <label for="">User Name</label>
+        <label for="" style="color: white">User Name</label>
         <input
           type="email"
           class="form-control"
@@ -30,10 +50,9 @@
           aria-describedby="emailHelpId"
           placeholder=""
         />
-        <small id="emailHelpId" class="form-text text-muted">Help text</small>
       </div>
       <div class="form-group">
-        <label for="">Password</label>
+        <label for="" style="color: white">Password</label>
         <input
           type="password"
           class="form-control"
@@ -42,36 +61,48 @@
           placeholder=""
         />
       </div>
-      <button type="button" class="btn btn-primary" id="signinemail">
-        Sign In
-      </button>
+      <div align="center">
+        <button type="button" class="btn btn-danger" id="signinemail">
+          <a href="#" class="google btn" style="color: white;">
+            <i class="fa fa-envelope"></i> Login with Email
+          </a>
+        </button>
+      </div>
+      <br>
 
-      <button type="button" class="btn btn-danger" id="signingoogle">
-        Sign In with Google
-      </button>
-      <p>
-        <div class="alert alert-danger">
-            <span id="error"></span>
-          </div>
-      </p>
+      <p style="text-align: center; color: aliceblue">Or Sign Up Using</p>
+
+      <div align="center">
+        <button type="button" class="btn btn-danger" id="signingoogle">
+          <a href="#" class="google btn" style="color: white;"
+            ><i class="fa fa-google fa-fw"> </i> Login with Google
+          </a>
+        </button>
+      </div>
+
+      <!-- <p>
+    <div class="alert alert-danger">
+      <span id="error"></span>
+    </div>
+    </p> -->
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"
-  ></script>
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
