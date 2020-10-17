@@ -15,7 +15,7 @@ var db = firebase.firestore();
 
 // home.html
 $(function () {
-
+    //  video
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().title == "Secret Life of Pets 2") {
@@ -49,7 +49,7 @@ $(function () {
 
 
 
-
+// hit to day
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().rating > 7) {
