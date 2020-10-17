@@ -226,7 +226,11 @@
         :checked+.tabbar__button {
           color: red;
           
-      }.back-button--material__icon {
+      }
+      .tabbar__button{
+        color: white;
+      }
+      .back-button--material__icon {
         
         fill: red;
        
