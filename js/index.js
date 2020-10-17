@@ -191,34 +191,37 @@ function goBack() {
 
 //AUM ZONE
 
-function page_search() {
-  db.collection("movies").get().then((querySnapshot) => {
-    var sug = `<p style="text-align: center;">รายการแนะนำ</p>`
-    $("#sug_show").append(sug);
 
+
+function page_search() {  
+  $("#sug_show").empty();
+  $("#search_show").empty();
+  db.collection("movies").get().then((querySnapshot) => {
 
     querySnapshot.forEach((doc) => {
       var row = `
 
-        <ons-card>
+        <ons-row style="margin: 5px;">
+        <ons-col class="text-center">
+        <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+        </ons-col>
 
-<p style="text-align: left;" class="search_show">
-
-  <img src="${doc.data().posterURL}" width="30%" style="float: left; margin: 5px 10px;" alt="">
-<h5>${doc.data().title} (${doc.data().year})</h5>
-<p style="font-size: 5px;">${doc.data().shortstory}</p>
-
-</p>
-
-</ons-card>`
+        <ons-col>
+        <p style="font-size:10px">${doc.data().title} (${doc.data().year})</p>
+        </ons-col>
+      
+        </ons-row>`
 
       $("#search_show").append(row);
     });
   });
 
+
+
   $("#search").click(function () {
-    $("#sug_show").empty();
+   
     $("#search_show").empty();
+    $("#sug_show").empty();
     $("#search_show").append("ผลลัพธ์การค้นหา:");
     var search_input = document.getElementById("search_input").value;
     console.log(search_input);
@@ -228,9 +231,9 @@ function page_search() {
       querySnapshot.forEach((doc) => {
 
         var titleforcheck = `${doc.data().title}`;
-        console.log(titleforcheck);
+        // console.log(titleforcheck);
         var yearforcheck = `${doc.data().year}`;
-        console.log(yearforcheck);
+        // console.log(yearforcheck);
 
         var regexNumber = /\d/;
         var regexLetter = /[a-zA-z]/;
@@ -239,13 +242,16 @@ function page_search() {
 
           if (titleforcheck.indexOf(search_input) != -1) {
             var row = `
-                    <ons-card>
-                    <p style="text-align: left;">
-                    <img src="${doc.data().posterURL}" width="40%" style="float: left; margin: 5px 10px;" alt="">
-                    <h5>${doc.data().title} (${doc.data().year})</h5>
-                    <p style="font-size: 5px;">${doc.data().shortstory}</p>
-                     </p>
-                    </ons-card>`
+            <ons-row style="margin: 5px;">
+            <ons-col class="text-center">
+            <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+            </ons-col>
+    
+            <ons-col>
+            <p style="font-size:10px">${doc.data().title} (${doc.data().year})</p>
+            </ons-col>
+          
+            </ons-row>`
 
 
           }
@@ -255,13 +261,16 @@ function page_search() {
 
           if (search_input == yearforcheck) {
             var row = `
-                    <ons-card>
-                    <p style="text-align: left;">
-                    <img src="${doc.data().posterURL}" width="40%" style="float: left; margin: 5px 10px;" alt="">
-                    <h5>${doc.data().title} (${doc.data().year})</h5>
-                    <p style="font-size: 5px;">${doc.data().shortstory}</p>
-                    </p>
-                    </ons-card>`
+            <ons-row style="margin: 5px;">
+            <ons-col class="text-center">
+            <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+            </ons-col>
+    
+            <ons-col>
+            <p style="font-size:10px">${doc.data().title} (${doc.data().year})</p>
+            </ons-col>
+          
+            </ons-row>`
 
           }
           // else{
@@ -272,7 +281,10 @@ function page_search() {
 
         } else {
           $("#search_show").empty();
-          $("#search_show").append("ใส่ข้อมูลเป็น ตัวอักษร หรือ ตัวเลข เท่านั้น!!");
+
+          var alert_search=`<p style="margin-left: 20px;">ใส่ข้อมูลเป็น ตัวอักษร หรือ ตัวเลข เท่านั้น!!</p>`;
+
+          $("#search_show").append(alert_search);
 
         }
 
@@ -281,12 +293,6 @@ function page_search() {
       });
 
     });
-
-
-
-
-
-
 
   });
 
