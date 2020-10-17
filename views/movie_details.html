@@ -1,0 +1,79 @@
+<!--  The Movie Detail Page -->
+<ons-page id="movie_details">
+ 
+  <ons-toolbar class="trailer_toolbar" modifier="transparent" inline>
+    <div class="left">
+      <ons-if platform="android">
+        <ons-back-button>Back</ons-back-button>
+      </ons-if>
+    </div>
+    
+    <div class="right">
+      <ons-if platform="android">
+        <ons-toolbar-button>
+          <ons-icon icon="md-cast"></ons-icon>
+        </ons-toolbar-button>
+        <ons-toolbar-button>
+          <ons-icon icon="md-share"></ons-icon>
+        </ons-toolbar-button>
+        
+      </ons-if>
+      <ons-if platform="ios">
+        <ons-toolbar-button onclick="goBack()">
+          <ons-back-button>Back</ons-back-button>
+        </ons-toolbar-button>
+      </ons-if>
+    </div>
+  </ons-toolbar>
+
+  <div class="trailer">
+
+  </div>
+  <br>
+  <div id="show_pic" style="text-align: center;">
+
+  </div>
+
+  <div class="movie_info">
+
+    <h2 id="movie_title" style="text-align: center;"></h2>
+
+    <ons-row class="movie_general_info">
+      <ons-col class="stars"> </ons-col>
+      <ons-col id="movie_year"></ons-col>
+      <ons-col id="movie_time"></ons-col>
+    </ons-row>
+
+
+
+    <div class="movie_synopsis"></div>
+    <div class="movie_cast">
+      Cast:
+    </div>
+    <ons-row class="movie_extra_buttons">
+      <ons-col>
+        <ons-button modifier="quiet">
+          <ons-icon icon="ion-plus-round"></ons-icon>
+          <div>My List</div>
+        </ons-button>
+      </ons-col>
+      <ons-col>
+        <ons-if platform="ios">
+          <ons-button modifier="quiet">
+            <ons-icon icon="ion-ios-upload-outline"></ons-icon>
+            <div>Share</div>
+          </ons-button>
+        </ons-if>
+      </ons-col>
+    </ons-row>
+  </div>
+
+  <div class="movie_list">
+    Similar Movies
+    <ons-carousel auto-refresh swipeable overscrollable item-width="140px" id="list-movie-similar">
+      
+    </ons-carousel>
+  </div>
+
+
+</ons-page>

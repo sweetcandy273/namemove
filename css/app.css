@@ -1,5 +1,5 @@
 .toolbar {
-    background-color: crimson;
+    background-color: black;
     color: white;
     text-align: center;
     font-size: 27px;
@@ -7,7 +7,7 @@
 }
 
 .tabbar {
-    background-color: crimson;
+    background-color: black;
 }
 
 #carousel {
@@ -68,13 +68,17 @@
   
         .movie_list {
           margin: 10px;
-          height: 130px;
-          padding-top: 30px;
+          height: 240px;
+          padding-top: 20px;
+         
         }
   
         .movie_list img {
+          margin-top: 5px;
           width: 90%
+         
         }
+  
 /* profile */
 
 .user_cover {
@@ -108,6 +112,7 @@
         .trailer {
           height: 190px;
           position: relative;
+          margin-top: 45px;
         }
   
         .trailer img {
@@ -146,7 +151,9 @@
         .movie_general_info {
           width: 250px;
           margin-bottom: 15px;
+          margin-left: 50px;
           color: gray;
+          text-align: center;
         }
   
         .movie_synopsis {
@@ -189,13 +196,13 @@
   }
 
   .page__background {
-    background-color: #2D2D2D;
+    background-color: black;
   }
 
   .toolbar:not(.toolbar--transparent) {
     background-color: black;
   }
-
+  
   .toolbar-button {
     color: white;
   }
@@ -207,10 +214,27 @@
   /* menu */
 
         .menu_header {
-          background-color: #1D1D1D;
+          background-color: black;
           border-bottom: 1px solid rgba(147, 145, 145, 0.76);
           color: white;
           height: 25px;
           font-size: 10px;
           padding: 0 0 0 16px!important;
         }
+        :checked+.tabbar__button {
+          color: red;
+          
+      }.back-button--material__icon {
+        
+        fill: red;
+       
+    }
+    .back-button {
+ 
+      color: red;
+  }
+  .back-button__icon {
+
+    fill: red;
+
+}

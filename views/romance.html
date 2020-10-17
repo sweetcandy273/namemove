@@ -1,0 +1,122 @@
+<ons-page id="romance">
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button onclick="fn.open()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center" style="color: red">NAME MOVE</div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="fa-search"></ons-icon>
+      </ons-toolbar-button>
+      <ons-if platform="android">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </ons-if>
+    </div>
+  </ons-toolbar>
+
+
+  <ons-carousel class="carousel" swipeable auto-scroll id="carousel" style="height: auto;">
+    <ons-carousel-item>
+      <img src="img/star.jpg" />
+    </ons-carousel-item>
+    <ons-carousel-item>
+      <img src="img/กัปตัน.jpg" />
+    </ons-carousel-item>
+    <ons-carousel-item>
+      <img src="img/กัปตัน.jpg" />
+    </ons-carousel-item>
+  </ons-carousel>
+
+  <div class="cover-label center">
+    <ul>
+      <li>
+        <div id="dot0" class="circle circle_current">&#x25cf;</div>
+      </li>
+      <li>
+        <div id="dot1" class="circle">&#x25cf;</div>
+      </li>
+      <li>
+        <div id="dot2" class="circle">&#x25cf;</div>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Romance Moveive</h1>
+  </div>
+  <div class="movie_list">
+    My List
+    <ons-carousel auto-refresh swipeable overscrollable item-width="110px">
+      <ons-carousel-item modifier="nodivider" id="Movie 1" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Movie 2" onclick="openMovieDetails(this.id)">
+        <img src="img/pic2.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Movie 3" onclick="openMovieDetails(this.id)">
+        <img src="img/pic3.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Movie 4" onclick="openMovieDetails(this.id)">
+        <img src="img/จอนวิก.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Movie 5" onclick="openMovieDetails(this.id)">
+        <img src="img/พี่มาค.jpg">
+      </ons-carousel-item>
+    </ons-carousel>
+  </div>
+  <br>
+  <br>
+  <div class="movie_list">
+    Top Picks For You
+    <ons-carousel auto-refresh swipeable overscrollable item-width="110px">
+      <ons-carousel-item modifier="nodivider" id="Top Movie 1" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Top Movie 2" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Top Movie 3" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Top Movie 4" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Top Movie 5" onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+    </ons-carousel>
+  </div>
+  <br>
+  <div class="movie_list">
+    Recently Added
+    <ons-carousel auto-refresh swipeable overscrollable item-width="110px">
+      <ons-carousel-item modifier="nodivider" id="Recent Movie 1" class="movie_cover"
+        onclick="openMovieDetails(this.id)">
+        <img src="img/pic2.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Recent Movie 2" class="movie_cover"
+        onclick="openMovieDetails(this.id)">
+        <img src="img/pic3.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Recent Movie 3" class="movie_cover"
+        onclick="openMovieDetails(this.id)">
+        <img src="img/pic1.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Recent Movie 4" class="movie_cover"
+        onclick="openMovieDetails(this.id)">
+        <img src="img/จอนวิก.jpg">
+      </ons-carousel-item>
+      <ons-carousel-item modifier="nodivider" id="Recent Movie 5" class="movie_cover"
+        onclick="openMovieDetails(this.id)">
+        <img src="img/พี่มาค.jpg">
+      </ons-carousel-item>
+    </ons-carousel>
+  </div>
+  <br>
+
+
+</ons-page>
