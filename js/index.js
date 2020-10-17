@@ -154,9 +154,9 @@ function openMovieDetails(id) {
               `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" >
                 <img src="${doc.data().posterURL}">
               </ons-carousel-item>`
-      
-              $("#list-movie-similar").append(result5)
-            
+
+            $("#list-movie-similar").append(result5)
+
           });
         });
 
@@ -187,5 +187,110 @@ function goBack() {
 //   document.querySelector('#myNavigator').pushPage('views/romance.html');
 // }
 // // `<h3>${doc.data().title}</h3>`
+
+
+//AUM ZONE
+
+function page_search() {
+  db.collection("movies").get().then((querySnapshot) => {
+    var sug = `<p style="text-align: center;">รายการแนะนำ</p>`
+    $("#sug_show").append(sug);
+
+
+    querySnapshot.forEach((doc) => {
+      var row = `
+
+        <ons-card>
+
+<p style="text-align: left;" class="search_show">
+
+  <img src="${doc.data().posterURL}" width="30%" style="float: left; margin: 5px 10px;" alt="">
+<h5>${doc.data().title} (${doc.data().year})</h5>
+<p style="font-size: 5px;">${doc.data().shortstory}</p>
+
+</p>
+
+</ons-card>`
+
+      $("#search_show").append(row);
+    });
+  });
+
+  $("#search").click(function () {
+    $("#sug_show").empty();
+    $("#search_show").empty();
+    $("#search_show").append("ผลลัพธ์การค้นหา:");
+    var search_input = document.getElementById("search_input").value;
+    console.log(search_input);
+
+    db.collection("movies").get().then((querySnapshot) => {
+
+      querySnapshot.forEach((doc) => {
+
+        var titleforcheck = `${doc.data().title}`;
+        console.log(titleforcheck);
+        var yearforcheck = `${doc.data().year}`;
+        console.log(yearforcheck);
+
+        var regexNumber = /\d/;
+        var regexLetter = /[a-zA-z]/;
+
+        if (regexLetter.test(search_input)) {
+
+          if (titleforcheck.indexOf(search_input) != -1) {
+            var row = `
+                    <ons-card>
+                    <p style="text-align: left;">
+                    <img src="${doc.data().posterURL}" width="40%" style="float: left; margin: 5px 10px;" alt="">
+                    <h5>${doc.data().title} (${doc.data().year})</h5>
+                    <p style="font-size: 5px;">${doc.data().shortstory}</p>
+                     </p>
+                    </ons-card>`
+
+
+          }
+
+
+        } else if (regexNumber.test(search_input)) {
+
+          if (search_input == yearforcheck) {
+            var row = `
+                    <ons-card>
+                    <p style="text-align: left;">
+                    <img src="${doc.data().posterURL}" width="40%" style="float: left; margin: 5px 10px;" alt="">
+                    <h5>${doc.data().title} (${doc.data().year})</h5>
+                    <p style="font-size: 5px;">${doc.data().shortstory}</p>
+                    </p>
+                    </ons-card>`
+
+          }
+          // else{
+          //     $("#search_show").empty();
+          //     $("#search_show").append("ไม่พบหนังในปีที่ค้นหา ลองค้นหาใหม่อีกครั้ง");
+
+          // }
+
+        } else {
+          $("#search_show").empty();
+          $("#search_show").append("ใส่ข้อมูลเป็น ตัวอักษร หรือ ตัวเลข เท่านั้น!!");
+
+        }
+
+        $("#search_show").append(row);
+
+      });
+
+    });
+
+
+
+
+
+
+
+  });
+
+
+}
 
 
