@@ -189,6 +189,9 @@ function goBack() {
 // // `<h3>${doc.data().title}</h3>`
 
 
+
+//  search
+
 function page_search() {
   $("#sug_show").empty();
   $("#search_show").empty();
