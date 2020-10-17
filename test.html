@@ -2,17 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="lib/onsenui/onsenui.css" />
-    <link rel="stylesheet" href="lib/onsenui/onsen-css-components.min.css" />
-    <link rel="stylesheet" href="css/app.css">
-    <script src="lib/onsenui/onsenui.min.js"></script>
-    <script src="lib/jquery/jquery-3.5.1.min.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/onsenui/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsenui/onsen-css-components.min.css" />
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="lib/onsenui/onsenui.min.js"></script>
+    <script src="lib/jquery/jquery-3.5.1.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,11 +22,24 @@
 
 <body>
 
-    
-
-
-
-
+    <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+            <ons-page>
+                <ons-list style="background-color: transparent;">
+                    <ons-list-item onclick="fn.load('views/home.html')" tappable>
+                        Home
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('views/action.html')" tappable>
+                        Action
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('about.html')" tappable>
+                        About
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="views/home.html"></ons-splitter-content>
+    </ons-splitter>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,7 +56,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
-    <script src="js/index.js"></script>
+
+    <script>
+        window.fn = {};
+
+        window.fn.open = function () {
+            var menu = document.getElementById('menu');
+            menu.open();
+        };
+
+        window.fn.load = function (page) {
+            var content = document.getElementById('content');
+            var menu = document.getElementById('menu');
+            content.load(page)
+                .then(menu.close.bind(menu));
+        };
+    </script>
 </body>
 
 </html>
