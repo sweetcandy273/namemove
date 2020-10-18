@@ -27,19 +27,21 @@ $(function () {
         // `
         // $(".wallpaper1").append(result1)
       } else if (doc.data().title == "X men dark phoenix") {
-        const result1 =
-          `
+ // const result1 =
+        //   `
           
-          <img src="${doc.data().posterURL}" width: 100%>
-        `
-        $(".wallpaper2").append(result1)
+        //   <video id="videoBG" autoplay muted loop width="100%">
+        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+        // `
+        // $(".wallpaper2").append(result1)
       } else if (doc.data().title == "Alita: Battle Ange") {
-        const result1 =
-          `
+      // const result1 =
+        //   `
           
-          <img src="${doc.data().posterURL}" width: 100%>
-        `
-        $(".wallpaper3").append(result1)
+        //   <video id="videoBG" autoplay muted loop width="100%">
+        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+        // `
+        // $(".wallpaper3").append(result1)
       }
     });
   });
