@@ -112,9 +112,9 @@ function openMovieDetails(id) {
         //   data-setup="{}"
         // >
         //   <source src ="${doc.data().video}" type="video/mp4" />
-         
+
         // </video>
-        
+
         //   `
         // $(".trailer").append(wallpaper)
 
@@ -200,138 +200,96 @@ function goBack() {
 //  search
 
 function page_search() {
-  $("#sug_show").empty();
-  $("#search_show").empty();
 
-
-  var alert_search = `<p style="text-center; margin-left: 20px;">รายการแนะนำ</p>`;
-
-  $("#sug_show").append(alert_search);
-
-  db.collection("movies").get().then((querySnapshot) => {
-
-    querySnapshot.forEach((doc) => {
-
-      if (`${doc.data().star}` > 4.5) {
-        var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>`
-
-      } else if (`${doc.data().star}` > 3.5) {
-        var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-      } else if (`${doc.data().star}` > 2.5) {
-        var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-      } else if (`${doc.data().star}` > 1.5) {
-        var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-      } else {
-        var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-      }
-
-
-      var row = `
-      <ons-row style="margin: 5px;" id="${doc.data().title}">
-      <ons-col class="text-center">
-      <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
-      </ons-col>
-
-      <ons-col>
-      <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
-
-      <p style="font-size:10px" class="text-center">`+ star + ` (${doc.data().star})</p>
-   
-      </ons-col>
-    
-      </ons-row>`
-
-      $("#search_show").append(row);
-    });
-  });
-
-
-
-  $("#search").click(function () {
-
-    $("#search_show").empty();
     $("#sug_show").empty();
+    $("#search_show").empty();
 
-    $("#search_show").append("ผลลัพธ์การค้นหา:");
-    var search_input = document.getElementById("search_input").value;
-    console.log(search_input);
+    var sug_search = `<p style="text-center; margin-left: 20px;">รายการแนะนำ</p>`;
+    $("#sug_show").append(sug_search);
 
     db.collection("movies").get().then((querySnapshot) => {
 
       querySnapshot.forEach((doc) => {
 
-        if (`${doc.data().star}` > 4) {
+        if (`${doc.data().star}` > 4.5) {
           var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>`
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>`
 
-        } else if (`${doc.data().star}` > 3) {
+        } else if (`${doc.data().star}` > 3.5) {
           var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
 
-        } else if (`${doc.data().star}` > 2) {
+        } else if (`${doc.data().star}` > 2.5) {
           var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
 
-        } else if (`${doc.data().star}` > 1) {
+        } else if (`${doc.data().star}` > 1.5) {
           var star = ` 
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: red" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
 
         } else {
           var star = ` 
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>
-<ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+  <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
 
         }
 
-        var titleforcheck = `${doc.data().title}`;
+
+        var row = `
+        <ons-row style="margin: 5px;" id="${doc.data().title}">
+        <ons-col class="text-center">
+        <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+        </ons-col>
+
+        <ons-col>
+        <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
+
+        <p style="font-size:10px" class="text-center">`+ star + ` (${doc.data().star})</p>
+
+        </ons-col>
+
+        </ons-row>`
+
+        $("#search_show").append(row);
+      });
+    });
+
+  $("#search").click(function () {
+
+    $("#search_show").empty();
+    $("#sug_show").empty();
+    const search_input = $("#search_input").val()
+    const search_input2 = search_input.replace(/ /g, "");
+    $("#search_show").append("ผลลัพธ์การค้นหา:");
+
+
+    db.collection("movies").get().then((querySnapshot) => {
+
+      querySnapshot.forEach((doc) => {
+
+
+
+        const titleforcheck = `${doc.data().title}`;
+        const titleforcheck2 = titleforcheck.replace(/ /g, "");
         // console.log(titleforcheck);
         var yearforcheck = `${doc.data().year}`;
         // console.log(yearforcheck);
@@ -339,47 +297,87 @@ function page_search() {
         var regexNumber = /\d/;
         var regexLetter = /[a-zA-z]/;
 
-        if (regexLetter.test(search_input)) {
+        if (regexLetter.test(search_input2)) {
 
 
-          if (titleforcheck.toLowerCase().indexOf(search_input.toLowerCase()) != -1) {
+          if (titleforcheck2.toLowerCase().indexOf(search_input2.toLowerCase()) != -1) {
+            if (`${doc.data().star}` > 4) {
+              var star = ` 
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>`
 
+            } else if (`${doc.data().star}` > 3) {
+              var star = ` 
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+            } else if (`${doc.data().star}` > 2) {
+              var star = ` 
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+            } else if (`${doc.data().star}` > 1) {
+              var star = ` 
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: red" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+            } else {
+              var star = ` 
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+    <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+            }
             var row = `
-            <ons-row style="margin: 5px;" id="${doc.data().title}" >
-            <ons-col class="text-center">
-            <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
-            </ons-col>
-    
-            <ons-col>
-            <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
+          <ons-row style="margin: 5px;" id="${doc.data().title}" >
+          <ons-col class="text-center">
+          <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+          </ons-col>
+  
+          <ons-col>
+          <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
 
-            <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
-         
-            </ons-col>
-          
-            </ons-row>`
+          <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
+       
+          </ons-col>
+        
+          </ons-row>`
 
 
           }
 
 
-        } else if (regexNumber.test(search_input)) {
+        } else if (regexNumber.test(search_input2)) {
 
-          if (search_input == yearforcheck) {
+          if (search_input2 == yearforcheck) {
             var row = `
-            <ons-row style="margin: 5px;" id="${doc.data().title}">
-            <ons-col class="text-center">
-            <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
-            </ons-col>
-    
-            <ons-col>
-            <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
+          <ons-row style="margin: 5px;" id="${doc.data().title}">
+          <ons-col class="text-center">
+          <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+          </ons-col>
+  
+          <ons-col>
+          <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
 
-            <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
-         
-            </ons-col>
-          
-            </ons-row>`
+          <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
+       
+          </ons-col>
+        
+          </ons-row>`
 
           }
           // else{
@@ -409,72 +407,78 @@ function page_search() {
 
 
 
+
 }
+
+
+
+
+
 
 //category
 
 function showmovie_frist() {
 
-//   db.collection("movies").get().then((querySnapshot) => {
+  //   db.collection("movies").get().then((querySnapshot) => {
 
-//     querySnapshot.forEach((doc) => {
-
-
-//       if (doc.data().type == "action") {
-
-//         if (`${doc.data().star}` > 4) {
-//           var star = ` 
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>`
-
-//         } else if (`${doc.data().star}` > 3) {
-//           var star = ` 
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-//         } else if (`${doc.data().star}` > 2) {
-//           var star = ` 
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-//         } else if (`${doc.data().star}` > 1) {
-//           var star = ` 
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: red" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-//         } else {
-//           var star = ` 
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
-// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
-
-//         }
+  //     querySnapshot.forEach((doc) => {
 
 
-//         row = `
-//         <img src="${doc.data().posterURL}" width="30%" style="" alt="" id="${doc.data().title}">`
-      
+  //       if (doc.data().type == "action") {
 
-//         $("#show_movie_category").append(row);
+  //         if (`${doc.data().star}` > 4) {
+  //           var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>`
 
-//       }
-//     })
+  //         } else if (`${doc.data().star}` > 3) {
+  //           var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
 
-//   })
+  //         } else if (`${doc.data().star}` > 2) {
+  //           var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //         } else if (`${doc.data().star}` > 1) {
+  //           var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //         } else {
+  //           var star = ` 
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //         }
+
+
+  //         row = `
+  //         <img src="${doc.data().posterURL}" width="30%" style="" alt="" id="${doc.data().title}">`
+
+
+  //         $("#show_movie_category").append(row);
+
+  //       }
+  //     })
+
+  //   })
 
 }
 
@@ -534,7 +538,7 @@ function showmovie_type(id) {
 
   //       row = `
   //       <img src="${doc.data().posterURL}" width="30%" style="" alt="" id="${doc.data().title}">`
-      
+
 
   //       $("#show_movie_category").append(row);
 
