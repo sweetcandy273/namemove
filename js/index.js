@@ -13,9 +13,9 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.firestore();
 
-// home.html
+
 // $(function () {
-//  video
+
 //   db.collection("movies").get().then((querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       if (doc.data().title == "Secret Life of Pets 2") {
@@ -49,7 +49,7 @@ var db = firebase.firestore();
 
 
 
-// hit to day
+
 // db.collection("movies").get().then((querySnapshot) => {
 //   querySnapshot.forEach((doc) => {
 //     if (doc.data().rating > 7) {
@@ -98,13 +98,25 @@ function openMovieDetails(id) {
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().title == id) {
-        const wallpaper =
-          `
-          <ons-icon icon="fa-play-circle"></ons-icon>
-          <img src="${doc.data().wellpaperURL}">
+        // const wallpaper =
+        //   `
+        //   <video
+        //   id="my-video"
+        //   class="video-js"
+        //   controls
+        //   autoplay
+        //   preload="auto"
+        //   width="640"
+        //   height="264"
+        //   poster="MY_VIDEO_POSTER.jpg"
+        //   data-setup="{}"
+        // >
+        //   <source src ="${doc.data().video}" type="video/mp4" />
+         
+        // </video>
         
-          `
-        $(".trailer").append(wallpaper)
+        //   `
+        // $(".trailer").append(wallpaper)
 
 
         const show_pic =
