@@ -15,13 +15,13 @@ var db = firebase.firestore();
 
 // home.html
 // $(function () {
-    //  video
+//  video
 //   db.collection("movies").get().then((querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       if (doc.data().title == "Secret Life of Pets 2") {
 //         const result1 =
 //           `
-          
+
 //           <video id="videoBG" autoplay muted loop width="100%">
 //             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
 //         `
@@ -29,7 +29,7 @@ var db = firebase.firestore();
 //       } else if (doc.data().title == "X men dark phoenix") {
 //  const result1 =
 //           `
-          
+
 //           <video id="videoBG" autoplay muted loop width="100%">
 //             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
 //         `
@@ -37,7 +37,7 @@ var db = firebase.firestore();
 //       } else if (doc.data().title == "Alita: Battle Ange") {
 //       const result1 =
 //           `
-          
+
 //           <video id="videoBG" autoplay muted loop width="100%">
 //             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
 //         `
@@ -50,17 +50,17 @@ var db = firebase.firestore();
 
 
 // hit to day
-  // db.collection("movies").get().then((querySnapshot) => {
-  //   querySnapshot.forEach((doc) => {
-  //     if (doc.data().rating > 7) {
-  //       const result1 =
-  //         `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-  //         <img src="${doc.data().posterURL}">
-  //       </ons-carousel-item>`
-  //       $("#list-movie-hit").append(result1)
-  //     }
-  //   });
-  // });
+// db.collection("movies").get().then((querySnapshot) => {
+//   querySnapshot.forEach((doc) => {
+//     if (doc.data().rating > 7) {
+//       const result1 =
+//         `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+//         <img src="${doc.data().posterURL}">
+//       </ons-carousel-item>`
+//       $("#list-movie-hit").append(result1)
+//     }
+//   });
+// });
 
 
 //   db.collection("movies").get().then((querySnapshot) => {
@@ -164,9 +164,9 @@ function openMovieDetails(id) {
               `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" >
                 <img src="${doc.data().posterURL}">
               </ons-carousel-item>`
-      
-              $("#list-movie-similar").append(result5)
-            
+
+            $("#list-movie-similar").append(result5)
+
           });
         });
 
@@ -192,9 +192,9 @@ function page_search() {
   $("#search_show").empty();
 
 
-          var alert_search = `<p style="text-center; margin-left: 20px;">รายการแนะนำ</p>`;
+  var alert_search = `<p style="text-center; margin-left: 20px;">รายการแนะนำ</p>`;
 
-          $("#sug_show").append(alert_search);
+  $("#sug_show").append(alert_search);
 
   db.collection("movies").get().then((querySnapshot) => {
 
@@ -268,7 +268,7 @@ function page_search() {
 
     $("#search_show").empty();
     $("#sug_show").empty();
-    
+
     $("#search_show").append("ผลลัพธ์การค้นหา:");
     var search_input = document.getElementById("search_input").value;
     console.log(search_input);
@@ -328,9 +328,9 @@ function page_search() {
         var regexLetter = /[a-zA-z]/;
 
         if (regexLetter.test(search_input)) {
-          
-  
-          if (titleforcheck.toLowerCase().indexOf(search_input.toLowerCase())!=-1) {
+
+
+          if (titleforcheck.toLowerCase().indexOf(search_input.toLowerCase()) != -1) {
 
             var row = `
             <ons-row style="margin: 5px;" id="${doc.data().title}" >
@@ -392,10 +392,163 @@ function page_search() {
     });
 
 
-    
+
   });
 
-  
-  
+
+
 }
 
+//category
+
+function showmovie_frist() {
+
+//   db.collection("movies").get().then((querySnapshot) => {
+
+//     querySnapshot.forEach((doc) => {
+
+
+//       if (doc.data().type == "action") {
+
+//         if (`${doc.data().star}` > 4) {
+//           var star = ` 
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>`
+
+//         } else if (`${doc.data().star}` > 3) {
+//           var star = ` 
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+//         } else if (`${doc.data().star}` > 2) {
+//           var star = ` 
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+//         } else if (`${doc.data().star}` > 1) {
+//           var star = ` 
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: red" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+//         } else {
+//           var star = ` 
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+// <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+//         }
+
+
+//         row = `
+//         <ons-row style="margin: 5px;" id="${doc.data().title}">
+//         <ons-col class="text-center">
+//         <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+//         </ons-col>
+  
+//         <ons-col>
+//         <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
+//         <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
+        
+//         </ons-col>
+      
+//         </ons-row>`
+
+//         $("#show_movie_category").append(row);
+
+//       }
+//     })
+
+//   })
+
+}
+
+
+function showmovie_type(id) {
+
+
+  $("#show_movie_category").empty();
+
+  // db.collection("movies").get().then((querySnapshot) => {
+
+  //   querySnapshot.forEach((doc) => {
+
+  //     if (doc.data().type == id) {
+
+  //       if (`${doc.data().star}` > 4) {
+  //         var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>`
+
+  //       } else if (`${doc.data().star}` > 3) {
+  //         var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //       } else if (`${doc.data().star}` > 2) {
+  //         var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //       } else if (`${doc.data().star}` > 1) {
+  //         var star = ` 
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: red" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //       } else {
+  //         var star = ` 
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>
+  // <ons-icon style="color: gray" icon="fa-star"></ons-icon>`
+
+  //       }
+
+  //       row = `
+  //     <ons-row style="margin: 5px;" id="${doc.data().title}">
+  //     <ons-col class="text-center">
+  //     <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
+  //     </ons-col>
+
+  //     <ons-col>
+  //     <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
+  //     <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
+      
+  //     </ons-col>
+    
+  //     </ons-row>`
+
+  //       $("#show_movie_category").append(row);
+
+  //     }
+  //   })
+
+  // })
+
+}
