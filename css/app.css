@@ -200,7 +200,7 @@
   }
 
   .page__background {
-    background-color: black;
+    background-color: #282828;
   }
 
   .toolbar:not(.toolbar--transparent) {
