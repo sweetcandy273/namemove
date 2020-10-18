@@ -14,75 +14,75 @@ firebase.analytics();
 var db = firebase.firestore();
 
 // home.html
-$(function () {
+// $(function () {
     //  video
-  db.collection("movies").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.data().title == "Secret Life of Pets 2") {
-        // const result1 =
-        //   `
+//   db.collection("movies").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       if (doc.data().title == "Secret Life of Pets 2") {
+//         const result1 =
+//           `
           
-        //   <video id="videoBG" autoplay muted loop width="100%">
-        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
-        // `
-        // $(".wallpaper1").append(result1)
-      } else if (doc.data().title == "X men dark phoenix") {
- // const result1 =
-        //   `
+//           <video id="videoBG" autoplay muted loop width="100%">
+//             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+//         `
+//         $(".wallpaper1").append(result1)
+//       } else if (doc.data().title == "X men dark phoenix") {
+//  const result1 =
+//           `
           
-        //   <video id="videoBG" autoplay muted loop width="100%">
-        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
-        // `
-        // $(".wallpaper2").append(result1)
-      } else if (doc.data().title == "Alita: Battle Ange") {
-      // const result1 =
-        //   `
+//           <video id="videoBG" autoplay muted loop width="100%">
+//             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+//         `
+//         $(".wallpaper2").append(result1)
+//       } else if (doc.data().title == "Alita: Battle Ange") {
+//       const result1 =
+//           `
           
-        //   <video id="videoBG" autoplay muted loop width="100%">
-        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
-        // `
-        // $(".wallpaper3").append(result1)
-      }
-    });
-  });
+//           <video id="videoBG" autoplay muted loop width="100%">
+//             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+//         `
+//         $(".wallpaper3").append(result1)
+//       }
+//     });
+//   });
 
 
 
 
 // hit to day
-  db.collection("movies").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.data().rating > 7) {
-        const result1 =
-          `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-          <img src="${doc.data().posterURL}">
-        </ons-carousel-item>`
-        $("#list-movie-hit").append(result1)
-      }
-    });
-  });
+  // db.collection("movies").get().then((querySnapshot) => {
+  //   querySnapshot.forEach((doc) => {
+  //     if (doc.data().rating > 7) {
+  //       const result1 =
+  //         `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+  //         <img src="${doc.data().posterURL}">
+  //       </ons-carousel-item>`
+  //       $("#list-movie-hit").append(result1)
+  //     }
+  //   });
+  // });
 
 
-  db.collection("movies").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
+//   db.collection("movies").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
 
-      const result =
-        `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
-          <img src="${doc.data().posterURL}">
-        </ons-carousel-item>`
-      if (doc.data().type == "comedy") {
-        $("#list-movie-comedy").append(result)
-      } else if (doc.data().type == "romantic") {
-        $("#list-movie-romance").append(result)
-      } else if (doc.data().type == "horror") {
-        $("#list-movie-horror").append(result)
-      } else if (doc.data().type == "action") {
-        $("#list-movie-action").append(result)
-      }
-    });
-  });
+//       const result =
+//         `<ons-carousel-item modifier="nodivider" id="${doc.data().title}" onclick="openMovieDetails(this.id)">
+//           <img src="${doc.data().posterURL}">
+//         </ons-carousel-item>`
+//       if (doc.data().type == "comedy") {
+//         $("#list-movie-comedy").append(result)
+//       } else if (doc.data().type == "romantic") {
+//         $("#list-movie-romance").append(result)
+//       } else if (doc.data().type == "horror") {
+//         $("#list-movie-horror").append(result)
+//       } else if (doc.data().type == "action") {
+//         $("#list-movie-action").append(result)
+//       }
+//     });
+//   });
 
-})
+// })
 
 
 
