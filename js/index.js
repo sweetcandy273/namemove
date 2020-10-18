@@ -21,7 +21,7 @@ $(function () {
       if (doc.data().title == "Secret Life of Pets 2") {
         const result1 =
           `
-          <ons-carousel-item id="wallpaper0">
+          
           <video id="videoBG" autoplay muted loop width="100%">
             <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
         `
@@ -29,17 +29,15 @@ $(function () {
       } else if (doc.data().title == "X men dark phoenix") {
         const result1 =
           `
-          <ons-carousel-item id="wallpaper0">
-          <video id="videoBG" autoplay muted loop width="100%">
-            <source src="${doc.data().wallpapervideo}" type="video/mp4" style="width: 100%"> </video>
+          
+          <img src="${doc.data().posterURL}" width: 100%>
         `
         $(".wallpaper2").append(result1)
       } else if (doc.data().title == "Alita: Battle Ange") {
         const result1 =
           `
-          <ons-carousel-item id="wallpaper0">
-          <video id="videoBG" autoplay muted loop width="100%">
-            <source src="${doc.data().wallpapervideo}" type="video/mp4" style="width: 100%"> </video>
+          
+          <img src="${doc.data().posterURL}" width: 100%>
         `
         $(".wallpaper3").append(result1)
       }
