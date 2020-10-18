@@ -19,13 +19,13 @@ $(function () {
   db.collection("movies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().title == "Secret Life of Pets 2") {
-        const result1 =
-          `
+        // const result1 =
+        //   `
           
-          <video id="videoBG" autoplay muted loop width="100%">
-            <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
-        `
-        $(".wallpaper1").append(result1)
+        //   <video id="videoBG" autoplay muted loop width="100%">
+        //     <source src="${doc.data().wallpapervideo}" style="width: 100%"> </video>
+        // `
+        // $(".wallpaper1").append(result1)
       } else if (doc.data().title == "X men dark phoenix") {
         const result1 =
           `
