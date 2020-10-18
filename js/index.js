@@ -192,7 +192,7 @@ function page_search() {
   $("#search_show").empty();
 
 
-          var alert_search = `<p style="text-center">รายการแนะนำ</p>`;
+          var alert_search = `<p style="text-center; margin-left: 20px;">รายการแนะนำ</p>`;
 
           $("#sug_show").append(alert_search);
 
@@ -268,6 +268,7 @@ function page_search() {
 
     $("#search_show").empty();
     $("#sug_show").empty();
+    
     $("#search_show").append("ผลลัพธ์การค้นหา:");
     var search_input = document.getElementById("search_input").value;
     console.log(search_input);
