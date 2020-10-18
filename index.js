@@ -1,7 +1,7 @@
 $(function () {
   $(function () {
     firebase.auth().onAuthStateChanged(function (user) {
-      console.log(`user`, user);
+      
 
       if (user) {
         // User is signed in.
@@ -10,7 +10,7 @@ $(function () {
         photoUrl = user.photoURL;
         $("#username").text(email);
         $("#displayname").text(displayName);
-        $("#photo").attr("src", photoURL);
+        
       } else {
         console.log(`signin`);
 
@@ -44,7 +44,7 @@ $(function () {
     measurementId: "G-ZP7LRG3WWE",
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+ // firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var db = firebase.firestore();
 
