@@ -454,18 +454,8 @@ function showmovie_frist() {
 
 
 //         row = `
-//         <ons-row style="margin: 5px;" id="${doc.data().title}">
-//         <ons-col class="text-center">
-//         <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
-//         </ons-col>
-  
-//         <ons-col>
-//         <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
-//         <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
-        
-//         </ons-col>
+//         <img src="${doc.data().posterURL}" width="30%" style="" alt="" id="${doc.data().title}">`
       
-//         </ons-row>`
 
 //         $("#show_movie_category").append(row);
 
@@ -531,18 +521,8 @@ function showmovie_type(id) {
   //       }
 
   //       row = `
-  //     <ons-row style="margin: 5px;" id="${doc.data().title}">
-  //     <ons-col class="text-center">
-  //     <img src="${doc.data().posterURL}" width="50%" style="margin: 5px 5px;" alt="">
-  //     </ons-col>
-
-  //     <ons-col>
-  //     <p style="font-size:10px" class="text-center">${doc.data().title} (${doc.data().year})</p>
-  //     <p style="font-size:10px" class="text-center">`+ star + `(${doc.data().star})</p>
+  //       <img src="${doc.data().posterURL}" width="30%" style="" alt="" id="${doc.data().title}">`
       
-  //     </ons-col>
-    
-  //     </ons-row>`
 
   //       $("#show_movie_category").append(row);
 
