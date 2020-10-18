@@ -76,6 +76,13 @@
           font-family: 'Staatliches', cursive;
          
         }
+        .favorite {
+         
+          font-size: 30px;
+          text-shadow: red 0.1em 0.1em 0.1em;
+          font-family: 'Staatliches', cursive;
+         
+        }
   
         .movie_list img {
           margin-top: 5px;
